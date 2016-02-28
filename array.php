@@ -9,7 +9,7 @@ $arr = [
 
 var_export(
     array_map(
-        function($elements)
+        function($element)
         {
             return implode(",", $element); 
         },
