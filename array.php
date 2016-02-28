@@ -24,6 +24,24 @@ array (
 )
 */
 
+var_export(
+    implode(
+        PHP_EOL,
+        array_map(
+            function($element)
+            {
+                return implode(", ", $element);
+            },
+            $arr
+        )
+    )
+);
+
+/*
+a, b, c
+d, e, f
+*/
+
 /* ---------------------- CALL_USER_FUNC_ARRAY (apply a callback to all the elements) ---------------------------- */ 
 
 print_r(
