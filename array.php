@@ -5,6 +5,8 @@ $arr = [
     ['d','e','f']
 ];
 
+/* ARRAY MAP */ 
+
 var_export(
     array_map(
         function($elements)
