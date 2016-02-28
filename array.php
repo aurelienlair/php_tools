@@ -5,7 +5,7 @@ $arr = [
     ['d','e','f']
 ];
 
-/* ARRAY MAP */ 
+/* ARRAY MAP (apply a callback to all the elements) */ 
 
 var_export(
     array_map(
