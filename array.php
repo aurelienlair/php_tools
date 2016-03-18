@@ -59,3 +59,32 @@ d,
 e,
 f
 */
+
+/* ---------------------- ARRAY_UNSHIFT (add at the begining of the array) ---------------------------- */ 
+$array = ['two', 'three'];
+array_unshift($array, 'zero', 'one');
+print_r($array);
+
+/* 
+Array
+(
+    [0] => zero
+    [1] => one
+    [2] => two
+    [3] => three
+)
+ */
+
+/* ---------------------- ARRAY_SHIFT (remove the first element at the begining of the array) ---------------------------- */ 
+$array = ['one', 'two', 'three'];
+$removedElement = array_shift($array);
+print_r($removedElement); // one
+print_r($array);
+
+/* 
+Array
+(
+    [0] => two
+    [1] => three
+)
+ */
