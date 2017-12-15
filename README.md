@@ -1,1 +1,1 @@
-# php main functions in a nutshell
+# php functions/patterns in a nutshell
