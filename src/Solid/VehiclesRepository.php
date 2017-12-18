@@ -11,7 +11,7 @@ class VehiclesRepository
         $this->vehicles['StrangeVehicle'] = new StrangeVehicle(new VehicleProperties('blue', 402, 391)); 
     }
 
-    public function getDetailsOf($name)
+    public function getDetailsOf($name): string
     {
         return $this->vehicles[$name]->details();
     }

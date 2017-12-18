@@ -6,7 +6,7 @@ interface Vehicle
     public function __construct(VehicleProperties $properties);
 
     /**
-     * @return json
+     * @return string 
      */
-    public function details();
+    public function details(): string;
 }
