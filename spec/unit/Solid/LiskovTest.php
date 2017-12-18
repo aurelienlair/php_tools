@@ -9,6 +9,7 @@ class LiskovTest extends TestCase
 
     public function setUp()
     {
+        $this->client = new Client();
         $this->vehiclesRepository = new VehiclesRepository();
     }
 
@@ -20,13 +21,25 @@ class LiskovTest extends TestCase
                 'maxSpeed' => 220,
                 'tankCapacity' => 86
             ]), 
-            $this->vehiclesRepository->getDetailsOf('Ferrari')
+            $this->client->find('Ferrari')->getDetails()
         );
     }
-    
+
     public function testStrangeVehicleClassIsNotRespectingLSP()
     {
-        $details = json_decode($this->vehiclesRepository->getDetailsOf('StrangeVehicle'), true);
-        $this->assertInternalType('int', $details['maxSpeed'], 'StrangeVehicle max speed is supposed to be an integer');
+        $details = json_decode($this->client->find('StrangeVehicle')->getDetails(), true);
+        $this->assertInternalType(
+            'int', 
+            $details['maxSpeed'],
+            'StrangeVehicle max speed is supposed to be an integer => it violates LSP'
+        );
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testWhenLookingForAnUnknownVehicleAnExceptionIsThrown()
+    {
+        $this->client->find('UFO')->getDetails();
     }
 }

@@ -11,8 +11,12 @@ class VehiclesRepository
         $this->vehicles['StrangeVehicle'] = new StrangeVehicle(new VehicleProperties('blue', 402, 391)); 
     }
 
-    public function getDetailsOf($name): string
+    public function find($name): Vehicle 
     {
-        return $this->vehicles[$name]->details();
+        if (array_key_exists($name, $this->vehicles)) {
+            return $this->vehicles[$name];
+        }
+
+        throw new \RuntimeException("Vehicle {$name} has not been found in the repository");
     }
 }

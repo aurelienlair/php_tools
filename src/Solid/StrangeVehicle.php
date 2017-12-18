@@ -10,7 +10,7 @@ class StrangeVehicle implements Vehicle
         $this->properties = $properties;
     }    
 
-    public function details(): string
+    public function getDetails(): string
     {
         return json_encode([
             'colour' => $this->properties->colour,

@@ -8,5 +8,5 @@ interface Vehicle
     /**
      * @return string 
      */
-    public function details(): string;
+    public function getDetails(): string;
 }
