@@ -1,6 +1,6 @@
 <phpunit colors="true" bootstrap="bootstrap.php" backupGlobals="false">
     <testsuites>
-        <testsuite name="wordWrapper">
+        <testsuite name="solid">
             <directory>spec</directory>
         </testsuite>
     </testsuites>

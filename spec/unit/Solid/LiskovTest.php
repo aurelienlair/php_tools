@@ -1,5 +1,6 @@
 <?php
 namespace Solid;
+
 use PHPUnit\Framework\TestCase;
 
 class LiskovTest extends TestCase
