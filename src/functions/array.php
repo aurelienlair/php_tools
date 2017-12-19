@@ -18,6 +18,7 @@ var_export(
 );
 
 /*
+Output:
 array (
   0 => 'a,b,c',
   1 => 'd,e,f',
@@ -38,6 +39,7 @@ var_export(
 );
 
 /*
+Output:
 a, b, c
 d, e, f
 */
@@ -52,6 +54,7 @@ print_r(
 );
 
 /*
+Output:
 a,
 b,
 c,
@@ -66,7 +69,8 @@ array_unshift($array, 'zero', 'one');
 print_r($array);
 
 /* 
-Array
+Output:
+array
 (
     [0] => zero
     [1] => one
@@ -82,7 +86,8 @@ print_r($removedElement); // one
 print_r($array);
 
 /* 
-Array
+output:
+array
 (
     [0] => two
     [1] => three
