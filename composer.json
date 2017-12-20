@@ -17,7 +17,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Solid\\": ["src/Solid"]
+            "Solid\\": [
+                "src/Solid",
+                "src/Solid/Liskov",
+                "src/Solid/SingleResponsiblity"
+            ]
         }
     }
 }
