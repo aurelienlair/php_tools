@@ -7,12 +7,13 @@ class UserAccount
     private $creditCardAssociation;
     private $balance; 
 
-    public function __construct(CreditCard $creditCard)
+    public function __construct(
+        CreditCard $creditCard,
+        CreditCardAssociation $creditCardAssociation
+    )
     {
         $this->creditCard = $creditCard;
-        $this->creditCardAssociation = CreditCardAssociationFactory::from(
-            $this->creditCard
-        );
+        $this->creditCardAssociation = $creditCardAssociation;
         $this->balance = 2000;
     }
 

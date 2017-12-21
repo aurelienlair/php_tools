@@ -34,10 +34,13 @@ class SingleResponsibilityTest extends TestCase
 
     public function testAGoodCreditCardManagementIsRespectingSingleResponsibilityPrinciple()
     {
-        $a = CreditCard::fromNumberAndType(378282246310005, 'AMERICAN_EXPRESS');
+        $creditCard = CreditCard::fromNumberAndType(378282246310005, 'AMERICAN_EXPRESS');
         $creditCardAccount = new CreditCardAccount(
             new UserAccount(
-                CreditCard::fromNumberAndType(378282246310005, 'AMERICAN_EXPRESS')
+                $creditCard,
+                CreditCardAssociationFactory::from(
+                    $creditCard
+                )
             )
         );
         $this->assertTrue(
