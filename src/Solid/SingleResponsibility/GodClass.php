@@ -1,15 +1,31 @@
 <?php
 namespace Solid;
 
-class UserAccount
+class GodClass
 {
     private $creditCard;
-    private $balance; 
+    private $balance;
 
     public function __construct(CreditCard $creditCard)
     {
         $this->creditCard = $creditCard;
         $this->balance = 2000;
+    }
+
+    public function containsValidCreditCard(): bool
+    {
+        if (preg_match("/^5[1-5]\d{14}$/", $this->creditCard['number'])) {
+            return true; 
+        }
+        return false;
+    }
+
+    public function creditCardType(): string
+    {
+        if (preg_match("/^5[1-5]\d{14}$/", $this->creditCard['number'])) {
+            return 'MASTERCARD'; 
+        }
+        return false;
     }
 
     public function charge(int $amount): void
@@ -23,15 +39,5 @@ class UserAccount
             . $this->creditCard['number']
             . " is " 
             . $this->balance;
-    }
-
-    public function containsValidCreditCard(CreditCardValidator $validator): bool
-    {
-        return $validator->isValid($this->creditCard['number']); 
-    }
-
-    public function creditCardType(CreditCardTypeDetector $detector): string
-    {
-        return $detector->type($this->creditCard['number']);
     }
 }

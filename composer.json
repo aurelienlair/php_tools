@@ -20,7 +20,7 @@
             "Solid\\": [
                 "src/Solid",
                 "src/Solid/Liskov",
-                "src/Solid/SingleResponsiblity"
+                "src/Solid/SingleResponsibility"
             ]
         }
     }

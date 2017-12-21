@@ -12,6 +12,14 @@ final class CreditCard extends ValueObject
         'type',
     ];
 
+    protected $allowedValues = [
+        'type' => [
+            'MASTERCARD',
+            'AMERICAN_EXPRESS',
+            'UNKNOWN',
+        ]
+    ];
+
     protected $defaultValues = [
         'type' => 'UNKNOWN',
     ];
@@ -26,8 +34,11 @@ final class CreditCard extends ValueObject
         parent::__construct($data);
     }
 
-    public static function fromNumber($number): ValueObject
+    public static function fromNumberAndType($number, $type): ValueObject
     { 
-        return new self(['number' => $number]);
+        return new self([
+            'number' => $number,
+            'type' => $type
+        ]);
     }
 }

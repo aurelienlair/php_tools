@@ -45,7 +45,7 @@ class ComposerStaticInit90e7f678a6befe7a169e7647d6694247
         array (
             0 => __DIR__ . '/../..' . '/src/Solid',
             1 => __DIR__ . '/../..' . '/src/Solid/Liskov',
-            2 => __DIR__ . '/../..' . '/src/Solid/SingleResponsiblity',
+            2 => __DIR__ . '/../..' . '/src/Solid/SingleResponsibility',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

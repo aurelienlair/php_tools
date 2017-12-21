@@ -8,7 +8,7 @@ class SingleResponsibilityTest extends TestCase
     public function testABadCreditCardManagementIsNotRespectingSingleResponsibilityPrinciple()
     {
         $godClass = new GodClass(
-            CreditCard::fromNumber(5105105105105100)
+            CreditCard::fromNumberAndType(5105105105105100, 'AMERICAN_EXPRESS')
         );
 
         // First responsibility within the same class
@@ -34,8 +34,11 @@ class SingleResponsibilityTest extends TestCase
 
     public function testAGoodCreditCardManagementIsRespectingSingleResponsibilityPrinciple()
     {
+        $a = CreditCard::fromNumberAndType(378282246310005, 'AMERICAN_EXPRESS');
         $creditCardAccount = new CreditCardAccount(
-            new UserAccount(CreditCard::fromNumber(378282246310005, 'AMERICAN_EXPRESS'))
+            new UserAccount(
+                CreditCard::fromNumberAndType(378282246310005, 'AMERICAN_EXPRESS')
+            )
         );
         $this->assertTrue(
             $creditCardAccount->containsValidCreditCard()

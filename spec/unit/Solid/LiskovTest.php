@@ -25,13 +25,15 @@ class LiskovTest extends TestCase
         );
     }
 
-    public function testStrangeVehicleClassIsNotRespectingLSP()
+    public function testStrangeVehicleMaxSpeedIsIsNotRespectingLSP()
     {
-        $details = json_decode($this->client->find('StrangeVehicle')->getDetails(), true);
+        $details = json_decode(
+            $this->client->find('StrangeVehicle')->getDetails(),
+            true
+        );
         $this->assertInternalType(
-            'int', 
-            $details['maxSpeed'],
-            'StrangeVehicle max speed is supposed to be an integer => it violates LSP'
+            'string', 
+            $details['maxSpeed']
         );
     }
 

@@ -92,7 +92,7 @@ class ValueObject extends \ArrayObject
                         . get_class($this) 
                         . " must be one of: `" 
                         . implode($this->allowedValues[$key], ', ') 
-                        . "` got `{$data[$key]}`"
+                        . "` passed `{$data[$key]}`"
                 );
             }
         }
