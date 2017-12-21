@@ -7,47 +7,47 @@ class SingleResponsibilityTest extends TestCase
 {
     public function testABadCreditCardManagementIsNotRespectingSingleResponsibilityPrinciple()
     {
-        $badCreditCardManagementSystem = new BadCreditCardManagementSystem(
+        $godClass = new GodClass(
             CreditCard::fromNumber(5105105105105100)
         );
 
         // First responsibility within the same class
         $this->assertTrue(
-            $badCreditCardManagementSystem->containsValidCreditCard()
+            $godClass->containsValidCreditCard()
         );
 
         // Second responsibility within the same class
         $this->assertEquals(
             "MASTERCARD",
-            $badCreditCardManagementSystem->creditCardType()
+            $godClass->creditCardType()
         );
 
         // Third responsibility within the same class
-        $badCreditCardManagementSystem->charge(1000);
+        $godClass->charge(1000);
 
         // Fourth responsibility within the same class
         $this->assertEquals(
             'The balance of 5105105105105100 is 1000',
-            $badCreditCardManagementSystem->balance()
+            $godClass->balance()
         );
     }
 
     public function testAGoodCreditCardManagementIsRespectingSingleResponsibilityPrinciple()
     {
-        $goodCreditCardManagementSystem = new GoodCreditCardManagementSystem(
+        $creditCardAccount = new CreditCardAccount(
             new UserAccount(CreditCard::fromNumber(378282246310005, 'AMERICAN_EXPRESS'))
         );
         $this->assertTrue(
-            $goodCreditCardManagementSystem->containsValidCreditCard()
+            $creditCardAccount->containsValidCreditCard()
         );
         $this->assertEquals(
             "AMERICAN_EXPRESS",
-            $goodCreditCardManagementSystem->creditCardType()
+            $creditCardAccount->creditCardType()
         );
-        $goodCreditCardManagementSystem->charge(800);
+        $creditCardAccount->charge(800);
         $this->assertEquals(
             'The balance of 378282246310005 is 1200',
-            $goodCreditCardManagementSystem->balance()
+            $creditCardAccount->balance()
         );
     }
 }
