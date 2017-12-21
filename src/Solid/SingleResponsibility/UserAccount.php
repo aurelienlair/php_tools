@@ -4,11 +4,15 @@ namespace Solid;
 class UserAccount
 {
     private $creditCard;
+    private $creditCardAssociation;
     private $balance; 
 
     public function __construct(CreditCard $creditCard)
     {
         $this->creditCard = $creditCard;
+        $this->creditCardAssociation = CreditCardAssociationFactory::from(
+            $this->creditCard
+        );
         $this->balance = 2000;
     }
 
@@ -27,15 +31,11 @@ class UserAccount
 
     public function containsValidCreditCard(): bool
     {
-        return CreditCardAssociationFactory::from(
-            $this->creditCard
-        )->isValid();
+        return $this->creditCardAssociation->isValid();
     }
 
     public function creditCardType(): string
     {
-        return CreditCardAssociationFactory::from(
-            $this->creditCard
-        )->type();
+        return $this->creditCardAssociation->type();
     }
 }
