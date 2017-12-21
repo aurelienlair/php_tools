@@ -12,7 +12,7 @@ class BadCreditCardManagementSystem
         $this->balance = 2000;
     }
 
-    public function containsValidCreditCard()
+    public function containsValidCreditCard(): bool
     {
         if (preg_match("/^5[1-5]\d{14}$/", $this->creditCard['number'])) {
             return true; 
@@ -20,7 +20,7 @@ class BadCreditCardManagementSystem
         return false;
     }
 
-    public function creditCardType()
+    public function creditCardType(): string
     {
         if (preg_match("/^5[1-5]\d{14}$/", $this->creditCard['number'])) {
             return 'MASTERCARD'; 
@@ -28,7 +28,7 @@ class BadCreditCardManagementSystem
         return false;
     }
 
-    public function charge(int $amount)
+    public function charge(int $amount): void
     {
         $this->balance -= $amount;
     }

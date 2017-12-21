@@ -26,7 +26,7 @@ final class CreditCard extends ValueObject
         parent::__construct($data);
     }
 
-    public static function fromNumber($number)
+    public static function fromNumber($number): ValueObject
     { 
         return new self(['number' => $number]);
     }

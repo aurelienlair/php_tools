@@ -3,7 +3,7 @@ namespace Solid;
 
 class CreditCardTypeDetector
 {
-    public function type(int $number)
+    public function type(int $number): string
     {
         if (preg_match("/^5[1-5]\d{14}$/", $number)) {
             return 'MASTERCARD';

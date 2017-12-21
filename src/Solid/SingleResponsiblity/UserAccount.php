@@ -25,12 +25,12 @@ class UserAccount
             . $this->balance;
     }
 
-    public function containsValidCreditCard(CreditCardValidator $validator)
+    public function containsValidCreditCard(CreditCardValidator $validator): bool
     {
         return $validator->isValid($this->creditCard['number']); 
     }
 
-    public function creditCardType(CreditCardTypeDetector $detector)
+    public function creditCardType(CreditCardTypeDetector $detector): string
     {
         return $detector->type($this->creditCard['number']);
     }

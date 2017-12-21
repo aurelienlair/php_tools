@@ -20,7 +20,7 @@ class GoodCreditCardManagementSystem
         return $this->userAccount->creditCardType(new CreditCardTypeDetector);
     }
 
-    public function charge(int $amount)
+    public function charge(int $amount): void
     {
         $this->userAccount->charge($amount);
     }
