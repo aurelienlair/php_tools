@@ -35,7 +35,7 @@ class MyTest extends TestCase
         $this->assertEquals($expectedString, $response->string());
     }
 
-    private function sampleProvider(): array
+    public static function sampleProvider(): array
     {
         return [
             ['01234', 'abcde'],
