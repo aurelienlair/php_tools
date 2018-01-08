@@ -31,6 +31,8 @@ class MyTest extends TestCase
      */
     public function testProviderIsHandledCorrectly($expectedNumber, $expectedString)
     {
+        $this->assertEquals($expectedNumber, $response->number());
+        $this->assertEquals($expectedString, $response->string());
     }
 
     private function sampleProvider(): array
