@@ -1,5 +1,5 @@
 <?php
-namespace Solid;
+namespace Pattern;
 
 class MasterCardCreditCardAssociation extends CreditCardAssociation
 {

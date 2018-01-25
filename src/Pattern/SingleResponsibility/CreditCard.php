@@ -1,5 +1,5 @@
 <?php
-namespace Solid;
+namespace Pattern;
 
 final class CreditCard extends ValueObject
 {   

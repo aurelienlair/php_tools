@@ -1,12 +1,12 @@
 <?php
-namespace Solid;
+namespace Pattern;
 
 class CreditCardAssociationFactory
 {
     private static $creditCardAssociations=[
-        'MASTERCARD' => 'Solid\MasterCardCreditCardAssociation',
-        'AMERICAN_EXPRESS' => 'Solid\AmericanExpressCreditCardAssociation',
-        'UNKNOWN' => 'Solid\UnknownCreditCardAssociation',
+        'MASTERCARD' => 'Pattern\MasterCardCreditCardAssociation',
+        'AMERICAN_EXPRESS' => 'Pattern\AmericanExpressCreditCardAssociation',
+        'UNKNOWN' => 'Pattern\UnknownCreditCardAssociation',
     ];
 
     public static function from(CreditCard $creditCard)

@@ -19,9 +19,9 @@ class ComposerStaticInit90e7f678a6befe7a169e7647d6694247
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-        'S' => 
+        'P' => 
         array (
-            'Solid\\' => 6,
+            'Pattern\\' => 8,
         ),
         'D' => 
         array (
@@ -34,18 +34,19 @@ class ComposerStaticInit90e7f678a6befe7a169e7647d6694247
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'Solid\\' => 
+        'Pattern\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Solid',
-            1 => __DIR__ . '/../..' . '/src/Solid/Liskov',
-            2 => __DIR__ . '/../..' . '/src/Solid/SingleResponsibility',
+            0 => __DIR__ . '/../..' . '/src/Pattern',
+            1 => __DIR__ . '/../..' . '/src/Pattern/Liskov',
+            2 => __DIR__ . '/../..' . '/src/Pattern/SingleResponsibility',
+            3 => __DIR__ . '/../..' . '/src/Pattern/Decorator',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
