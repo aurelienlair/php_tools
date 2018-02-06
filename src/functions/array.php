@@ -25,6 +25,28 @@ array (
 )
 */
 
+$arr = [
+    'foo' => 'bar',
+    'baz' => 'qux'
+];
+var_export(
+    array_map(
+        function($key, $value)
+        {
+            return "$key=$value";
+        },
+        array_keys($arr),
+        array_values($arr)
+    )
+);
+/*
+Output:
+array (
+  0 => 'foo=bar',
+  1 => 'baz=qux',
+)
+*/
+
 var_export(
     implode(
         PHP_EOL,
