@@ -115,3 +115,21 @@ array
     [1] => three
 )
  */
+
+/* ---------------------- ARRAY_COMBINE (creates an array by using one array for keys and another for its values) ---------------------------- */ 
+$arrayLetters = ['one', 'two', 'three'];
+$arrayNumbers = [1, 2, 3];
+$arrayLettersWithNumbers = array_combine(
+    /* keys   */ $arrayLetters,
+    /* values */ $arrayNumbers
+);
+print_r($arrayLettersWithNumbers); 
+/* 
+output:
+array
+(
+    ['one'] => 1 
+    ['two'] => 2 
+    ['three'] => 3 
+)
+ */
