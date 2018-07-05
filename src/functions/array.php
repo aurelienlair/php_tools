@@ -133,3 +133,17 @@ array
     ['three'] => 3 
 )
  */
+
+/* ---------------------- ARRAY_COLUMN (return the values from a single column in the input array) ---------------------------- */ 
+$arr = [
+    ['id' => 123],
+    ['id' => 456]
+];
+var_export(array_column($arr, 'id'));
+/*
+output:
+array (
+  0 => 123,
+  1 => 456,
+)
+*/
