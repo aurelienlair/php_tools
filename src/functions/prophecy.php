@@ -28,8 +28,8 @@ $myService = $myService->reveal();
 $translator = static::prophesize(TranslatorInterface::class);
 $translator
     ->trans(
-        Argument::is($parameter1),
-        Argument::exact([]),
+        Argument::is($parameter1), // checks that the argument is identical to a specific value
+        Argument::exact([]), //  checks that the argument matches a specific value
         Argument::exact('some string'),
         Argument::exact($parameter2)
     )
